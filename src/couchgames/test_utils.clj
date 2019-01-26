@@ -19,7 +19,7 @@
          ~inc-function-name #(swap! counter# inc)]
      (let [result# (do ~@forms)]
        (is (= ~expected (deref counter#))
-           (format "invocations of %s should match the expected value" (str ~inc-function-name)))
+           (format "Condition failed: expecting %s '%s' calls, got %s" ~expected '~inc-function-name (deref counter#)))
        result#)))
 
 (defn- counted-values [list]
@@ -51,7 +51,7 @@
          ~update-function-name #(swap! acc# (fn [v#] (conj v# %)))]
      (let [result# (do ~@forms)]       
        (is ((compare-operation (quote ~ordered)) ~expected (deref acc#)) 
-           (format "invocation of %s should trigger the expected values, got %s instead" (str ~update-function-name) (deref acc#)))
+           (format "Condition failed: expecting %s, got %s instead" ~expected (deref acc#)))
        result#)))
 
 (defn create-functions-redefs [functions]
