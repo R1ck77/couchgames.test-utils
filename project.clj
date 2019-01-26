@@ -1,4 +1,4 @@
-(defproject couchgames/test-utils "0.1.0"
+(defproject couchgames/test-utils "0.1.1"
   :description "Mixed bag of testing functions and macros"
   :url "https://github.com/R1ck77/couchgames.test-utils"
   :license {:name "CC Attribution 4.0 International with exception for binary distribution"
