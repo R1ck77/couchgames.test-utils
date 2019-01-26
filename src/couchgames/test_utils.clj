@@ -75,3 +75,20 @@ Used like this:
 
 (defn fail [message]
   (assert false message))
+
+(comment "this is a possible proposal for a complex test function"
+  (defmacro with-grouped-invocatins
+   " [did-it ([:a :b :c] :ordered]
+  [did-it [:a :b :c]]
+  [did-it [:a [:a2 :b2 :c2] #{:a3 :b3 :c3}]]
+
+  
+  [did-it #{:a #{:b :c} :d [:e :f :g]}]
+  :e :c :f :d :g :b  :a
+
+  patologico
+  [did-it #{:a #{:a :b} :a [:a :b :c]}]
+  :a :a :a :b :a :c :a
+  " [x]
+  
+   ))
